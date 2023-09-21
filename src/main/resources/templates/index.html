@@ -4,22 +4,10 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 layout:decorate="~{commons/layout}">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>게시판</title>
 </head>
 <body>
-hello world (INDEX)
 <div layout:fragment="content">
-    <h3><a th:href="@{/function/1}">기능-1</a></h3>
-    <h3><a th:href="@{/function/2}">기능-2</a></h3>
-    <h3><a th:href="@{/function/3}">기능-3</a></h3>
-
-    <form th:action="@{/send}" method="post">
-        <input type="submit" value="버튼 A" name="a" />
-        <input type="submit" value="버튼 B" name="b" />
-        <input type="submit" value="버튼 C" name="c" />
-    </form>
-
-    <h3><a th:href="@{/show}">calc</a></h3>
     <h3><a th:href="@{/home}">home</a></h3>
 </div>
 </body>

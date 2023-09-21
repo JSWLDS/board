@@ -1,17 +1,18 @@
-package com.example.board.controller;
+package com.example.board.domain.api;
 
-import com.example.board.repository.UserRepository;
-import com.example.board.table.User;
+import com.example.board.domain.dao.UserRepository;
+import com.example.board.domain.dto.Member;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
+
 @Controller
 @RequiredArgsConstructor
-class Controller {
+class BoardController {
 
     private final UserRepository userRepository;
 
@@ -25,7 +26,7 @@ class Controller {
 
     @GetMapping("/home")
     public String showHome(Model model) {
-        List<User> nameList = userRepository.findAll();
+        List<Member> nameList = userRepository.findAll();
         model.addAttribute("nameList", nameList);
 
         return "home";
