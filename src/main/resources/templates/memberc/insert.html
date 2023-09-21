@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{commons/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <form th:action="@{/create}" method="post" th:object="${member}">
+    <div>
+        username <input type="text" th:field="*{username}"/>
+
+        password<input type="text" th:field="*{password}"/>
+
+        name<input type="text" th:field="*{name}"/>
+
+        email<input type="email" th:field="*{email}"/>
+
+    </div>
+      <button type="submit" th:text="#{button.send}" ></button>
+
+      <ul th:if="${#fields.hasErrors('*')}">
+          <li th:each="err:${#fields.errors('*')}" th:text="${err}"></li>
+      </ul>
+  </form>
+</div>
+</body>
+</html>

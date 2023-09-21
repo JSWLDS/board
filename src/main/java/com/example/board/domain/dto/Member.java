@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "member")
 @Data
-public class Member extends BaseTimeEntity {
+public class Member{
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull
@@ -18,11 +18,20 @@ public class Member extends BaseTimeEntity {
     private Long id;
 
     @NotNull
+    @Column(name = "username")
+    private String username;
+
+
+    @NotNull
+    @Column(name = "password")
+    private String password;
+
+    @NotNull
     @Column(name="name")
     private String name;
 
     @NotNull
-    @Column(name = "content")
-    private String content;
+    @Column(name="email")
+    private String email;
 
 }
